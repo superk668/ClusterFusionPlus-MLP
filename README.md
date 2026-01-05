@@ -102,3 +102,5 @@ This repo focuses on the **MLP Down + residual** piece. In the full decoder, MLP
 - **Why fusion helps** (high-level): fewer kernel launches, less intermediate memory traffic, and better reuse of on-chip data/metadata across the combined computation.
 
 One concrete example is avoiding extra reads/writes of the MLP intermediate. For batch=1 and fp16, the eliminated traffic is about 1.31 MB per decode step (read + write of a 10240-element vector across 32 layers). With ~1.8 TB/s device memory bandwidth (RTX 5090), that’s on the order of ~0.7 ms saved, consistent with the drop from 5.32 ms to 4.90 ms.
+
+For detailed analysis, see ablation study in our paper.
