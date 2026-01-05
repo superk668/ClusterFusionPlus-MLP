@@ -1,7 +1,7 @@
-# OmniClusterFusion - MLP Part
+# ClusterFusion++ MLP Part
 
 This project is the MLP part of [ClusterFusionPlus](https://github.com/superk668/ClusterFusionPlus). Refer to the upstream repo for the full system.
-OmniClusterFusion implements a CUDA-accelerated decoder layer for EleutherAI Pythia-2.8B model, and this repo focuses on the **MLP Down Projection** computation.
+ClusterFusion++ implements a CUDA-accelerated decoder layer for EleutherAI Pythia-2.8B and -6.9B model, and this repo focuses on the **MLP Down Projection** computation.
 
 ## Environment
 
@@ -11,8 +11,8 @@ OmniClusterFusion implements a CUDA-accelerated decoder layer for EleutherAI Pyt
 ## Quick Start
 
 ```bash
-conda create -n OmniClusterFusion python=3.13 -y
-conda activate OmniClusterFusion
+conda create -n ClusterFusion python=3.13 -y
+conda activate ClusterFusion
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
 
 # Kernel + HF stack
@@ -22,8 +22,8 @@ pip install transformers accelerate datasets
 # ClusterFusion build
 pip install -e .
 
-# Test OmniClusterFusion MLP part
-python tests/test_mlp.py
+# Test ClusterFusion MLP part
+python benchmark_e2e.py
 ```
 
 ## API Usage
